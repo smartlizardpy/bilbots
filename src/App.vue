@@ -15,6 +15,18 @@
       </div>
     </div>
   </div>
+   <footer class="footer p-10 bg-base-300 text-base-content">
+    <div>
+      <h2 class="font-bold text-lg">Ozan Kaygusuz</h2>
+      <p>Powered by modern web technologies:</p>
+      <ul class="list-disc ml-6">
+        <li>Vue.js</li>
+        <li>Tailwind CSS</li>
+        <li>DaisyUI</li>
+      </ul>
+      <p class="mt-2">© 2024 All rights reserved.</p>
+    </div>
+  </footer>
 </template>
 
 <script setup>
