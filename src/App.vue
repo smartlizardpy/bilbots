@@ -44,6 +44,14 @@
       </tbody>
     </table>
   </div>
+  <div id="app">
+    <footer class="bg-gray-800 text-white py-4">
+      <div class="container mx-auto text-center">
+        <p class="mb-2">Made with ❤️ by Ozan Kaygusuz</p>
+        <p>Technologies used: Vue, Tailwind, DaisyUI</p>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script setup>
