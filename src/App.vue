@@ -25,33 +25,6 @@
       </div>
     </div>
   </div>
-  <div class="overflow-x-auto">
-    <table class="table">
-      <!-- head -->
-      <thead>
-        <tr>
-          <th>Sıra</th>
-          <th>İsim</th>
-          <th>Puan</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(player, index) in leaderboard" :key="player.name" :class="index % 2 === 0 ? 'bg-base-200' : ''">
-          <td>{{ index + 1 }}</td>
-          <td>{{ player.name }}</td>
-          <td>{{ player.points }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div id="app">
-    <footer class="bg-gray-800 text-white py-4">
-      <div class="container mx-auto text-center">
-        <p class="mb-2">Made with ❤️ by Ozan Kaygusuz</p>
-        <p>Technologies used: Vue, Tailwind, DaisyUI</p>
-      </div>
-    </footer>
-  </div>
 </template>
 
 <script setup>
