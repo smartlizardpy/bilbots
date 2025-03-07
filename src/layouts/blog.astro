@@ -1,0 +1,64 @@
+---
+const { title, image } = Astro.props;
+---
+
+<section class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+  <div class="relative h-64 w-full mb-6">
+    <img
+      :src={image}
+      alt="Blog Image"
+      class="object-cover w-full h-full rounded-2xl shadow-lg"
+    />
+  </div>
+
+  <h1 class="text-4xl font-bold mb-4 text-gray-800">{title}</h1>
+
+  <div class="prose prose-lg text-gray-700">
+    <slot />
+  </div>
+</section>
+
+<style>
+  section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #f9fafb;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .prose img {
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    color: #2d3748;
+  }
+
+  .prose p {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+  }
+
+  .prose a {
+    color: #3182ce;
+    text-decoration: underline;
+  }
+
+  .prose blockquote {
+    border-left: 4px solid #e2e8f0;
+    padding-left: 1rem;
+    color: #718096;
+    font-style: italic;
+  }
+
+  .prose ul, .prose ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+</style>

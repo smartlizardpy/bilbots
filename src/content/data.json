@@ -1,0 +1,20 @@
+{
+    "pages":[
+        {
+            "name":"home",
+            "ptitle":"Home",
+            
+            "hero":{
+                "title":"Hello We are bilbots",
+                "desc":"Innovating. Competing. Smiling.",
+                "img":"takim_photo.jpeg"
+            },
+            "robot":{
+                "title":"Our Robot: Modifiyeli Tofaş",
+                "desc":"Check out our custom-built Modifiyeli Tofaş, engineered for peak performance in VEX IQ competitions!",
+                "fotolar":["mt-1.jpeg","mt-2.jpeg","mt-3.jpeg"],
+                "ozellikler":["High torque motors","Advanced sensor array","Custom drivetrain","Precision control system"]
+            }
+        }
+    ]
+}

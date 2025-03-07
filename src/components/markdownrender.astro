@@ -1,0 +1,11 @@
+---
+import { remark } from 'remark';
+import remarkHtml from 'remark-html';
+
+const { content } = Astro.props;
+
+const processed = await remark().use(remarkHtml).process(content);
+const contentHtml = processed.toString();
+---
+
+

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Team Photo</title>
+    <style>
+      .team-section {
+        margin: 0;
+        text-align: center;
+        color:white;
+      }
+
+      .team-photo {
+        border-radius: 0;
+        box-shadow: none;
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .overlay span {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 5px 10px;
+        border-radius: 4px;
+        transform: translate(-50%, -50%);
+        cursor: move;
+      }
+
+      .team-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media (max-width: 600px) {
+        .overlay span {
+          font-size: 0.8rem;
+        }
+      }
+
+      .submit-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="team-section relative">
+      <h1 class="text-3xl font-bold mb-6">Meet Our Team</h1>
+      <div
+        class="team-content flex flex-col items-center justify-center gap-6 relative"
+      >
+        <div class="relative w-full" style="max-width: 1200px;">
+          <img
+            src="takim_photo.jpeg"
+            alt="Team Photo"
+            class="team-photo object-cover"
+          />
+          <div class="overlay">
+            <span
+              class="name"
+              style="left: 24.8113%; top: 59.633%;"
+              data-name="Rüzgar Kurtuluş">Rüzgar Kurtuluş</span
+            >
+            <span
+              class="name"
+              style="left: 33.8679%; top: 53.9755%;"
+              data-name="Alperen">Alperen</span
+            >
+            <span
+              class="name"
+              style="left: 43.6792%; top: 50.6116%;"
+              data-name="Doruk">Doruk</span
+            >
+            <span
+              class="name"
+              style="left: 51.0377%; top: 60.0917%;"
+              data-name="Ahmet Çınar">Ahmet Çınar</span
+            >
+            <span
+              class="name"
+              style="left: 53.8679%; top: 49.5413%;"
+              data-name="Atakan">Atakan</span
+            >
+            <span
+              class="name"
+              style="left: 64.8113%; top: 59.0214%;"
+              data-name="Ego">Ego</span
+            >
+            <span
+              class="name"
+              style="left: 59.8113%; top: 52.1407%;"
+              data-name="Ozan">Ozan</span
+            >
+            <span
+              class="name"
+              style="left: 40.0943%; top: 59.4801%;"
+              data-name="New Member">New Member</span
+            >
+          </div>
+        </div>
+        <button class="submit-btn">Submit</button>
+      </div>
+    </div>
+
+    <script>
+      const names = document.querySelectorAll(".overlay .name");
+
+      names.forEach((span) => {
+        span.draggable = true;
+
+        span.addEventListener("dragstart", (e) => {
+          e.dataTransfer.setData("text/plain", null);
+          e.target.classList.add("dragging");
+        });
+
+        span.addEventListener("dragend", (e) => {
+          e.target.classList.remove("dragging");
+        });
+      });
+
+      document.querySelector(".overlay").addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const dragging = document.querySelector(".dragging");
+        if (!dragging) return;
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        dragging.style.left = `${(x / rect.width) * 100}%`;
+        dragging.style.top = `${(y / rect.height) * 100}%`;
+      });
+
+      document.querySelector(".submit-btn").addEventListener("click", () => {
+        const data = [];
+
+        names.forEach((span) => {
+          const style = window.getComputedStyle(span);
+          data.push({
+            name: span.getAttribute("data-name"),
+            position: {
+              left: style.left,
+              top: style.top,
+            },
+          });
+        });
+
+        const jsonString = JSON.stringify(data, null, 2);
+        navigator.clipboard
+          .writeText(jsonString)
+          .then(() => {
+            alert("JSON copied to clipboard!");
+          })
+          .catch((err) => {
+            console.error("Could not copy text: ", err);
+          });
+      });
+    </script>
+  </body>
+</html>

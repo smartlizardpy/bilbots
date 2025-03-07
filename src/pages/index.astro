@@ -1,0 +1,144 @@
+---
+import { remark } from "remark";
+import remarkHtml from "remark-html";
+
+const mdContent = `
+# BilBots
+
+## Biz BilBots Geliyoruz! 🚀
+[YouTube Kanalımıza Abone Olmayı Unutmayın](https://www.youtube.com/@67042A)
+
+Merhaba! Biz, VEX IQ Robotics Competition 2024-2025 Rapid Relay sezonunda yarışan BilBots takımıyız. Takım numaramız 67042A ve amacımız takım çalışması ve yaratıcılıkla zirveye ulaşmak!
+
+---
+
+## Takımımız 👥
+
+- **Egemen Ahmet Çay (7-C)**: Strateji, Parça Birleştirme
+- **Ozan Kaygusuz (7-C)**: Otonom Kodlama, Strateji
+- **Doruk Erdemi (7-B)**: Ana Driver, Engineering Notebook
+- **Rüzgar Kurtuluş (7-C)**: Ana Driver
+- **Alperen Halil Doğan (7-D)**: Parça Sorumlusu
+- **Atakan Taşkın (6-D)**: Parça Sorumlusu
+- **Ahmet Çınar Tekbaş (5-C)**: Upper Collector
+- **Erkut Yücel (5-C)**: Yedek Driver, Puan Hesaplama  
+- **Ahmet Gedik** : Danışman/Mentör
+- **Merve Keşli** : Danışman/Mentör
+---
+
+## Robotumuz 🤖
+
+Tasarımımızda başlangıç olarak Hero Bot Swish üzerinden ilerledik ve üzerine kendi geliştirmelerimizi ekledik. Bu geliştirmeler arasında iki hazneli katapult sistemi sayesinde daha hızlı ve garantili atışlar sağladık. Yüksek emme motoru ile topları daha güçlü ve stabil bir şekilde toplarken, esnek emme paneli ile sıkışmaları önledik. Ayrıca arka tampon ekleyerek hem robotumuzu koruduk hem de sabit duruş desteği sağladık.
+
+---
+
+## Kodlama Süreci 💻
+
+Kodlama aşamasında VEX Code IQ platformunu kullandık.  
+E tuşu ile emme motorunu kontrol ediyoruz.  
+F tuşu ile katapultu hassas bir şekilde yönetiyoruz.  
+Otonom mod ise Ozan tarafından geliştirildi ve başarılı bir şekilde çalışıyor.
+
+---
+
+## Testler ve İyileştirmeler 🔧
+
+Testlerimiz sonucunda katapultun hassasiyetini artırdık, motor hızlarını dengeledik ve sürüş ile manevra kabiliyetimizi geliştirdik. Driver modunu ise optimize ederek yarışmaya tam hazır hale getirdik.
+
+---
+
+## Gerçekleşen Planlarımız ✅
+
+Çift toplu atış mekanizmasını başarıyla ekledik.  
+Daha hızlı ve stabil bir sürüş sistemi kurduk.  
+Yarışma stratejilerimizi güncelledik ve kodlarımızı optimize ettik.  
+Bu sayede robotumuz artık hem daha hızlı hem de daha etkili bir performans sergiliyor.
+
+---
+
+## Hedefimiz 🏆
+
+Takım ruhu ve inovasyonla Rapid Relay yarışmasında en iyi dereceyi almak ve her geçen gün kendimizi geliştirerek ilerlemek istiyoruz.
+
+---
+
+BilBots: Sadece bir takım değil, bir hayal ortaklığı! 🌟
+
+`;
+
+const processed = await remark().use(remarkHtml).process(mdContent);
+const contentHtml = processed.toString();
+---
+
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BilBots</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f9fafb;
+        font-family: "Inter", sans-serif;
+        color: #111827;
+        line-height: 1.7;
+      }
+      main {
+        max-width: 800px;
+        padding: 2rem;
+        text-align: center;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #1d4ed8;
+      }
+      h2 {
+        font-size: 1.75rem;
+        margin-top: 2rem;
+        color: #2563eb;
+      }
+      a {
+        color: #3b82f6;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      details {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        background: #f3f4f6;
+        text-align: left;
+      }
+      * {
+        list-style: none;
+      }
+
+      summary {
+        font-weight: 600;
+        cursor: pointer;
+      }
+    .img {
+    
+      width: 60%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+    </style>
+  </head>
+  <body>
+    <main>
+        <img src="takim_photo.jpeg" class="img" alt="BilBots Takımı" />
+      <div set:html={contentHtml} />
+    </main>
+  </body>
+</html>
