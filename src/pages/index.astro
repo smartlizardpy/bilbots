@@ -27,7 +27,7 @@ Merhaba! Biz, VEX IQ Robotics Competition 2024-2025 Rapid Relay sezonunda yarı�
 ---
 
 ## Robotumuz 🤖
-
+![robotumuz](mt-3.jpeg "robotumuz")
 Tasarımımızda başlangıç olarak Hero Bot Swish üzerinden ilerledik ve üzerine kendi geliştirmelerimizi ekledik. Bu geliştirmeler arasında iki hazneli katapult sistemi sayesinde daha hızlı ve garantili atışlar sağladık. Yüksek emme motoru ile topları daha güçlü ve stabil bir şekilde toplarken, esnek emme paneli ile sıkışmaları önledik. Ayrıca arka tampon ekleyerek hem robotumuzu koruduk hem de sabit duruş desteği sağladık.
 
 ---
@@ -126,20 +126,146 @@ const contentHtml = processed.toString();
         font-weight: 600;
         cursor: pointer;
       }
-    .img {
-    
-      width: 60%;
-      height: auto;
-      display: block;
-      margin: 1rem auto;
-    }
-    
+      .img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin: 1rem auto;
+      }
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
     </style>
   </head>
   <body>
     <main>
-        <img src="takim_photo.jpeg" class="img" alt="BilBots Takımı" />
-      <div set:html={contentHtml} />
+      <h1>Bilbots</h1>
+      <img class="img" src="takim_photo.jpeg" alt="takım fotğrafı" />
+
+      <h3>Biz Bilbots Geliyoruz</h3>
+      <p>
+        <a href="https://www.youtube.com/@67042A"
+          >YouTube Kanalımıza Abone Olmayı Unutmayın</a
+        >
+      </p>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/dKskVJwUxSk?si=1kOPrWqUiQfJqs2a"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+      <h2>Takımımız</h2>
+      <table>
+        <tr>
+          <th>Üye Adı</th>
+          <th>Sınıf</th>
+          <th>Görevler</th>
+        </tr>
+        <tr>
+          <td>Egemen Ahmet Çay</td>
+          <td>7-C</td>
+          <td>Strateji</td>
+        </tr>
+        <tr>
+          <td>Ozan Kaygusuz</td>
+          <td>7-C</td>
+          <td>Otonom Kodlama, Strateji</td>
+        </tr>
+        <tr>
+          <td>Doruk Erdemi</td>
+          <td>7-B</td>
+          <td>Ana Driver, Engineering Notebook</td>
+        </tr>
+        <tr>
+          <td>Rüzgar Kurtuluş</td>
+          <td>7-C</td>
+          <td>Ana Driver</td>
+        </tr>
+        <tr>
+          <td>Alperen Halil Doğan</td>
+          <td>7-D</td>
+          <td>Parça Sorumlusu, Parça Birleştirme</td>
+        </tr>
+        <tr>
+          <td>Atakan Taşkın</td>
+          <td>6-D</td>
+          <td>Parça Sorumlusu</td>
+        </tr>
+        <tr>
+          <td>Ahmet Çınar Tekbaş</td>
+          <td>5-C</td>
+          <td>Upper Collector</td>
+        </tr>
+        <tr>
+          <td>Erkut Yücel</td>
+          <td>5-C</td>
+          <td>Yedek Driver, Puan Hesaplama</td>
+        </tr>
+        <tr>
+          <td>Ahmet Gedik</td>
+          <td>-</td>
+          <td>Danışman/Mentör</td>
+        </tr>
+        <tr>
+          <td>Merve Keşli</td>
+          <td>-</td>
+          <td>Danışman/Mentör</td>
+        </tr>
+      </table>
+
+      <h2>Robotumuz</h2>
+      <img class="img" src="mt-3.jpeg" alt="robotumuz" />
+      <p>
+        Tasarımımızda başlangıç olarak Hero Bot Swish üzerinden ilerledik ve
+        üzerine kendi geliştirmelerimizi ekledik. Bu geliştirmeler arasında iki
+        hazneli katapult sistemi sayesinde daha hızlı ve garantili atışlar
+        sağladık. Yüksek emme motoru ile topları daha güçlü ve stabil bir
+        şekilde toplarken, esnek emme paneli ile sıkışmaları önledik. Ayrıca
+        arka tampon ekleyerek hem robotumuzu koruduk hem de sabit duruş desteği
+        sağladık.
+      </p>
+      <h2>Kodlama Süreci 💻</h2>
+      <p>
+        Kodlama aşamasında VEX Code IQ platformunu kullandık. E tuşu ile emme
+        motorunu kontrol ediyoruz. F tuşu ile katapultu hassas bir şekilde
+        yönetiyoruz. Otonom mod ise Ozan tarafından geliştirildi ve başarılı bir
+        şekilde çalışıyor.
+      </p>
+      <h2>Testler ve İyileştirmeler 🔧</h2>
+      <p>
+        Testlerimiz sonucunda katapultun hassasiyetini artırdık, motor hızlarını
+        dengeledik ve sürüş ile manevra kabiliyetimizi geliştirdik. Driver
+        modunu ise optimize ederek yarışmaya tam hazır hale getirdik.
+      </p>
+      <h2>Gerçekleşen Planlarımız ✅</h2>
+      <p>
+        Çift toplu atış mekanizmasını başarıyla ekledik. Daha hızlı ve stabil
+        bir sürüş sistemi kurduk. Yarışma stratejilerimizi güncelledik ve
+        kodlarımızı optimize ettik. Bu sayede robotumuz artık hem daha hızlı hem
+        de daha etkili bir performans sergiliyor.
+      </p>
+      <h2>Hedefimiz 🏆</h2>
+      <p>
+        Takım ruhu ve inovasyonla Rapid Relay yarışmasında en iyi dereceyi almak
+        ve her geçen gün kendimizi geliştirerek ilerlemek istiyoruz.
+      </p>
+      <h2>BilBots: Sadece bir takım değil, bir aile! 🌟</h2>
     </main>
   </body>
 </html>
