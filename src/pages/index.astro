@@ -1,79 +1,58 @@
 ---
-import { remark } from "remark";
-import remarkHtml from "remark-html";
 
-const mdContent = `
-# BilBots
-
-## Biz BilBots Geliyoruz! 🚀
-[YouTube Kanalımıza Abone Olmayı Unutmayın](https://www.youtube.com/@67042A)
-
-Merhaba! Biz, VEX IQ Robotics Competition 2024-2025 Rapid Relay sezonunda yarışan BilBots takımıyız. Takım numaramız 67042A ve amacımız takım çalışması ve yaratıcılıkla zirveye ulaşmak!
-
----
-
-## Takımımız 👥
-
-- **Egemen Ahmet Çay (7-C)**: Strateji, Parça Birleştirme
-- **Ozan Kaygusuz (7-C)**: Otonom Kodlama, Strateji
-- **Doruk Erdemi (7-B)**: Ana Driver, Engineering Notebook
-- **Rüzgar Kurtuluş (7-C)**: Ana Driver
-- **Alperen Halil Doğan (7-D)**: Parça Sorumlusu
-- **Atakan Taşkın (6-D)**: Parça Sorumlusu
-- **Ahmet Çınar Tekbaş (5-C)**: Upper Collector
-- **Erkut Yücel (5-C)**: Yedek Driver, Puan Hesaplama  
-- **Ahmet Gedik** : Danışman/Mentör
-- **Merve Keşli** : Danışman/Mentör
----
-
-## Robotumuz 🤖
-![robotumuz](mt-3.jpeg "robotumuz")
-Tasarımımızda başlangıç olarak Hero Bot Swish üzerinden ilerledik ve üzerine kendi geliştirmelerimizi ekledik. Bu geliştirmeler arasında iki hazneli katapult sistemi sayesinde daha hızlı ve garantili atışlar sağladık. Yüksek emme motoru ile topları daha güçlü ve stabil bir şekilde toplarken, esnek emme paneli ile sıkışmaları önledik. Ayrıca arka tampon ekleyerek hem robotumuzu koruduk hem de sabit duruş desteği sağladık.
-
----
-
-## Kodlama Süreci 💻
-
-Kodlama aşamasında VEX Code IQ platformunu kullandık.  
-E tuşu ile emme motorunu kontrol ediyoruz.  
-F tuşu ile katapultu hassas bir şekilde yönetiyoruz.  
-Otonom mod ise Ozan tarafından geliştirildi ve başarılı bir şekilde çalışıyor.
-
----
-
-## Testler ve İyileştirmeler 🔧
-
-Testlerimiz sonucunda katapultun hassasiyetini artırdık, motor hızlarını dengeledik ve sürüş ile manevra kabiliyetimizi geliştirdik. Driver modunu ise optimize ederek yarışmaya tam hazır hale getirdik.
-
----
-
-## Gerçekleşen Planlarımız ✅
-
-Çift toplu atış mekanizmasını başarıyla ekledik.  
-Daha hızlı ve stabil bir sürüş sistemi kurduk.  
-Yarışma stratejilerimizi güncelledik ve kodlarımızı optimize ettik.  
-Bu sayede robotumuz artık hem daha hızlı hem de daha etkili bir performans sergiliyor.
-
----
-
-## Hedefimiz 🏆
-
-Takım ruhu ve inovasyonla Rapid Relay yarışmasında en iyi dereceyi almak ve her geçen gün kendimizi geliştirerek ilerlemek istiyoruz.
-
----
-
-BilBots: Sadece bir takım değil, bir hayal ortaklığı! 🌟
-
-`;
-
-const processed = await remark().use(remarkHtml).process(mdContent);
-const contentHtml = processed.toString();
 ---
 
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
     <title>BilBots</title>
+    <meta
+      name="google-site-verification"
+      content="cJwpVZCFS4uQtDNe3i2Ka_wu6en0bj9wy0fkp1th1i8"
+    />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-icon-192x192.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
       body {
@@ -130,7 +109,7 @@ const contentHtml = processed.toString();
         width: 60%;
         height: auto;
         display: block;
-        margin: 1rem auto;
+        margin: 20px auto;
       }
       table {
         width: 80%;
@@ -153,7 +132,6 @@ const contentHtml = processed.toString();
   <body>
     <main>
       <h1>Bilbots</h1>
-      <img class="img" src="takim_photo.jpeg" alt="takım fotğrafı" />
 
       <h3>Biz Bilbots Geliyoruz</h3>
       <p>
@@ -161,6 +139,8 @@ const contentHtml = processed.toString();
           >YouTube Kanalımıza Abone Olmayı Unutmayın</a
         >
       </p>
+      <img class="img hero" src="takim_photo.jpeg" alt="takım fotğrafı" />
+
       <iframe
         width="560"
         height="315"
