@@ -67,6 +67,9 @@
         color: #111827;
         line-height: 1.7;
       }
+      html {
+        scroll-behavior: smooth;
+      }
       main {
         max-width: 800px;
         padding: 2rem;
@@ -99,6 +102,85 @@
       }
       * {
         list-style: none;
+      }
+
+      /* Sidebar Styling */
+      .sidepanel {
+        width: 250px;
+        position: fixed;
+        top: 0;
+        right: -250px; /* Hidden initially */
+        height: 100%;
+        background-color: #f0f0f0;
+        padding: 20px;
+        box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+        border-radius: 10px 0 0 10px;
+      }
+
+      /* Open Sidebar */
+      .sidepanel.open {
+        right: 0;
+      }
+
+      .sidepanel ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidepanel li {
+        margin-bottom: 10px;
+      }
+
+      .sidepanel a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .sidepanel a:hover {
+        background-color: #ddd;
+      }
+
+      /* Cutout Button */
+      .toggle-btn {
+        position: fixed;
+        top: 90%;
+        right: -1rem;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background: #ff4757;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition:
+          right 0.3s ease-in-out,
+          transform 0.3s ease;
+        border-radius: 50%;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        clip-path: circle(50%);
+      }
+
+      /* Move button when sidebar opens */
+      .sidepanel.open + .toggle-btn {
+        right: 220px;
+      }
+
+      /* Rotate Arrow */
+      .toggle-btn span {
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+
+      .sidepanel.open + .toggle-btn span {
+        transform: rotate(180deg);
       }
 
       summary {
@@ -141,16 +223,7 @@
       </p>
       <img class="img hero" src="takim_photo.jpeg" alt="takım fotğrafı" />
 
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/dKskVJwUxSk?si=1kOPrWqUiQfJqs2a"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen></iframe>
-      <h2>Takımımız</h2>
+      <h2 id="takimimiz">Takımımız</h2>
       <table>
         <tr>
           <th>Üye Adı</th>
@@ -209,7 +282,7 @@
         </tr>
       </table>
 
-      <h2>Robotumuz</h2>
+      <h2 id="robotumuz">Robotumuz</h2>
       <img class="img" src="mt-3.jpeg" alt="robotumuz" />
       <p>
         Tasarımımızda başlangıç olarak Hero Bot Swish üzerinden ilerledik ve
@@ -220,32 +293,74 @@
         arka tampon ekleyerek hem robotumuzu koruduk hem de sabit duruş desteği
         sağladık.
       </p>
-      <h2>Kodlama Süreci 💻</h2>
+      <h2 id="kodlama-sureci">Kodlama Süreci 💻</h2>
       <p>
         Kodlama aşamasında VEX Code IQ platformunu kullandık. E tuşu ile emme
         motorunu kontrol ediyoruz. F tuşu ile katapultu hassas bir şekilde
         yönetiyoruz. Otonom mod ise Ozan tarafından geliştirildi ve başarılı bir
         şekilde çalışıyor.
       </p>
-      <h2>Testler ve İyileştirmeler 🔧</h2>
+      <h2 id="#testler-ve-iyileştirmeler">Testler ve İyileştirmeler 🔧</h2>
       <p>
         Testlerimiz sonucunda katapultun hassasiyetini artırdık, motor hızlarını
         dengeledik ve sürüş ile manevra kabiliyetimizi geliştirdik. Driver
         modunu ise optimize ederek yarışmaya tam hazır hale getirdik.
       </p>
-      <h2>Gerçekleşen Planlarımız ✅</h2>
+      <h2 id="gerceklesen-planlarimiz">Gerçekleşen Planlarımız ✅</h2>
       <p>
         Çift toplu atış mekanizmasını başarıyla ekledik. Daha hızlı ve stabil
         bir sürüş sistemi kurduk. Yarışma stratejilerimizi güncelledik ve
         kodlarımızı optimize ettik. Bu sayede robotumuz artık hem daha hızlı hem
         de daha etkili bir performans sergiliyor.
       </p>
-      <h2>Hedefimiz 🏆</h2>
+      <h2 id="hedefimiz">Hedefimiz 🏆</h2>
       <p>
         Takım ruhu ve inovasyonla Rapid Relay yarışmasında en iyi dereceyi almak
         ve her geçen gün kendimizi geliştirerek ilerlemek istiyoruz.
       </p>
-      <h2>BilBots: Sadece bir takım değil, bir aile! 🌟</h2>
     </main>
+
+    <!-- Sidebar -->
+    <div class="sidepanel open" id="sidebar">
+      <iframe
+        width="100%"
+        height="auto"
+        src="https://www.youtube.com/embed/dKskVJwUxSk?si=1kOPrWqUiQfJqs2a"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+      <p>
+        Bilbots, genç ve yetenekli öğrencilerden oluşan bir robotik takımıdır.
+        Amacımız bilim ve teknolojiye olan ilgiyi arttırmak ve yenilikçi
+        projeler geliştirmektir.
+      </p>
+
+      <h3>İçindekiler</h3>
+      <ul>
+        <li><a href="#takimimiz">Takımımız</a></li>
+        <li><a href="#robotumuz">Robotumuz</a></li>
+        <li><a href="#kodlama-sureci">Kodlama Süreci</a></li>
+        <li>
+          <a href="#testler-ve-iyileştirmeler">Testler ve İyileştirmeler</a>
+        </li>
+        <li><a href="#hedefimiz">Hedefimiz</a></li>
+      </ul>
+    </div>
+
+    <!-- Toggle Button -->
+    <button class="toggle-btn open" id="toggleBtn">
+      <span>➤</span>
+    </button>
+
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const toggleBtn = document.getElementById("toggleBtn");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        toggleBtn.classList.toggle("open");
+      });
+    </script>
   </body>
 </html>
