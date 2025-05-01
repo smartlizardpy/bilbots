@@ -52,21 +52,59 @@
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
+    <!-- Basic SEO -->
+    <meta
+      name="description"
+      content="BilBots, genç ve yetenekli öğrencilerden oluşan bir robotik takımıdır. Rapid Relay yarışmasına katılıyor ve teknolojiyi seviyor!"
+    />
+    <meta
+      name="keywords"
+      content="BilBots, robotik takımı, VEX IQ, Rapid Relay, otonom, mühendislik defteri, kodlama, yarışma, Türkiye robotik"
+    />
+    <meta name="author" content="BilBots Takımı" />
+
+    <!-- Open Graph (for rich previews on social media) -->
+    <meta property="og:title" content="BilBots - Genç Robotik Takımı" />
+    <meta
+      property="og:description"
+      content="Rapid Relay'de yarışan yaratıcı ve enerjik robotik takımıyla tanışın!"
+    />
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+    <!-- use team photo or robot -->
+    <meta property="og:url" content="https://yourdomain.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BilBots - Genç Robotik Takımı" />
+    <meta
+      name="twitter:description"
+      content="Rapid Relay'de yarışan yaratıcı ve enerjik robotik takımıyla tanışın!"
+    />
+
+    <!-- Viewport (for responsiveness) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
         padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         min-height: 100vh;
         background-color: #f9fafb;
         font-family: "Inter", sans-serif;
         color: #111827;
         line-height: 1.7;
+        display: flex;
+        flex-direction: column;
       }
+
       html {
         scroll-behavior: smooth;
       }
@@ -74,7 +112,10 @@
         max-width: 800px;
         padding: 2rem;
         text-align: center;
+        margin: 5rem auto 2rem auto;
+        flex: 1;
       }
+
       h1 {
         font-size: 2.5rem;
         margin-bottom: 1rem;
@@ -104,85 +145,6 @@
         list-style: none;
       }
 
-      /* Sidebar Styling */
-      .sidepanel {
-        width: 250px;
-        position: fixed;
-        top: 0;
-        right: -250px; /* Hidden initially */
-        height: 100%;
-        background-color: #f0f0f0;
-        padding: 20px;
-        box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease-in-out;
-        border-radius: 10px 0 0 10px;
-      }
-
-      /* Open Sidebar */
-      .sidepanel.open {
-        right: 0;
-      }
-
-      .sidepanel ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .sidepanel li {
-        margin-bottom: 10px;
-      }
-
-      .sidepanel a {
-        text-decoration: none;
-        color: #333;
-        display: block;
-        padding: 5px;
-        border-radius: 5px;
-      }
-
-      .sidepanel a:hover {
-        background-color: #ddd;
-      }
-
-      /* Cutout Button */
-      .toggle-btn {
-        position: fixed;
-        top: 90%;
-        right: -1rem;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        background: #ff4757;
-        color: white;
-        border: none;
-        cursor: pointer;
-        transition:
-          right 0.3s ease-in-out,
-          transform 0.3s ease;
-        border-radius: 50%;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        clip-path: circle(50%);
-      }
-
-      /* Move button when sidebar opens */
-      .sidepanel.open + .toggle-btn {
-        right: 220px;
-      }
-
-      /* Rotate Arrow */
-      .toggle-btn span {
-        display: inline-block;
-        transition: transform 0.3s ease;
-      }
-
-      .sidepanel.open + .toggle-btn span {
-        transform: rotate(180deg);
-      }
-
       summary {
         font-weight: 600;
         cursor: pointer;
@@ -209,9 +171,97 @@
       th {
         background-color: #f2f2f2;
       }
+      /* ✅ Navbar Styling */
+      .navbar {
+        width: 100%;
+        background-color: #1d4ed8;
+        padding: 0.75rem 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #cbd5e1;
+      }
+      .footer {
+        width: 100%;
+        background-color: #1d4ed8;
+        color: white;
+        padding: 2rem 1rem;
+        margin-top: 4rem;
+        text-align: center;
+        font-size: 0.95rem;
+        position: relative;
+        bottom: 0;
+        left: 0;
+      }
+
+      .footer-content {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .footer-content p {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-content a {
+        color: #e0f2fe;
+        font-weight: 500;
+        text-decoration: none;
+        margin: 0 0.5rem;
+        transition: color 0.3s ease;
+      }
+
+      .footer-content a:hover {
+        color: #bae6fd;
+      }
     </style>
   </head>
   <body>
+    <!-- ✅ Top Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">BilBots</a>
+        <ul class="nav-links">
+          <li><a href="#takimimiz">Takımımız</a></li>
+          <li><a href="#robotumuz">Robotumuz</a></li>
+          <li><a href="#kodlama-sureci">Kodlama Süreci</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <main>
       <h1>Bilbots</h1>
 
@@ -318,49 +368,47 @@
         Takım ruhu ve inovasyonla Rapid Relay yarışmasında en iyi dereceyi almak
         ve her geçen gün kendimizi geliştirerek ilerlemek istiyoruz.
       </p>
-    </main>
+      <h2 id="videomuz">Videomuz 🎥</h2>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/dKskVJwUxSk"
+          title="BilBots Tanıtım Videosu"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
 
-    <!-- Sidebar -->
-    <div class="sidepanel open" id="sidebar">
-      <iframe
-        width="100%"
-        height="auto"
-        src="https://www.youtube.com/embed/dKskVJwUxSk?si=1kOPrWqUiQfJqs2a"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
       <p>
-        Bilbots, genç ve yetenekli öğrencilerden oluşan bir robotik takımıdır.
-        Amacımız bilim ve teknolojiye olan ilgiyi arttırmak ve yenilikçi
-        projeler geliştirmektir.
+        Takım <strong>Bilbots (67042A)</strong> olarak, VEX IQ robot gelişim sürecimizi,
+        karşılaştığımız zorlukları ve STEM alanında topluma ilham verme projelerimizi
+        sizlerle paylaşıyoruz.
       </p>
-
-      <h3>İçindekiler</h3>
       <ul>
-        <li><a href="#takimimiz">Takımımız</a></li>
-        <li><a href="#robotumuz">Robotumuz</a></li>
-        <li><a href="#kodlama-sureci">Kodlama Süreci</a></li>
-        <li>
-          <a href="#testler-ve-iyileştirmeler">Testler ve İyileştirmeler</a>
-        </li>
-        <li><a href="#hedefimiz">Hedefimiz</a></li>
+        <li>🔧 Takım tanıtımı ve görev dağılımı</li>
+        <li>🤖 İlk tasarımdan yarışmaya kadar robot evrimi</li>
+        <li>🚧 Karşılaştığımız engeller ve çözümler</li>
+        <li>🏆 Inspire Ödülü’nün bizim için önemi</li>
       </ul>
-    </div>
-
-    <!-- Toggle Button -->
-    <button class="toggle-btn open" id="toggleBtn">
-      <span>➤</span>
-    </button>
-
-    <script>
-      const sidebar = document.getElementById("sidebar");
-      const toggleBtn = document.getElementById("toggleBtn");
-
-      toggleBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        toggleBtn.classList.toggle("open");
-      });
-    </script>
+      <p>
+        Videomuzu izleyin, <strong>ilham alın</strong> ve robotik dünyasında neler
+        başarabileceğinizi görün!<br />
+        Abone olmayı ve beğenmeyi unutmayın. 💙
+      </p>
+    </main>
+    <!-- ✅ Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2025 BilBots Takımı – 67042A</p>
+     
+        <p>
+          <a
+            href="https://www.youtube.com/@67042A"
+            target="_blank"
+            rel="noopener noreferrer">📺 YouTube Kanalımız</a
+          >
+          
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
